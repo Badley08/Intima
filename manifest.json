@@ -1,0 +1,21 @@
+{
+  "name": "Intima — Journal Intime",
+  "short_name": "Intima",
+  "description": "Un journal intime sécurisé, beau et personnel.",
+  "start_url": "/intima/",
+  "display": "standalone",
+  "background_color": "#f4e3ff",
+  "theme_color": "#6a3093",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
