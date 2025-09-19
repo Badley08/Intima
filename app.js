@@ -1,92 +1,77 @@
-// Langues
+// 🌍 Traductions
 const translations = {
   fr: {
-    greeting: "Bienvenue, {name}",
-    newEntry: "+ Nouvelle entrée",
-    exportData: "💾 Exporter",
-    importData: "📂 Importer",
-    logout: "🚪 Déconnexion",
-    login: "Se connecter",
-    register: "Créer un compte",
-    entryTitle: "Titre de l'entrée",
-    entryContent: "Écrivez votre pensée...",
-    save: "Sauvegarder",
-    delete: "Supprimer",
-    mood: "Humeur",
-    happy: "😊 Heureux",
-    sad: "😢 Triste",
-    angry: "😠 En colère",
-    calm: "😌 Calme",
-    excited: "🤩 Excité",
-    noEntries: "Aucune entrée. Commencez à écrire !",
-    exportSuccess: "Données exportées avec succès !",
-    importSuccess: "Données importées avec succès !",
-    invalidFile: "Fichier invalide.",
-    loginFailed: "Identifiants incorrects.",
-    registerSuccess: "Compte créé avec succès !",
-    registerFailed: "Ce nom d'utilisateur existe déjà.",
-    deleteConfirm: "Êtes-vous sûr de vouloir supprimer cette entrée ?"
+    greeting: "Bienvenue, {name} 💖",
+    start: "Commencer ✨",
+    placeholderAlias: "Choisis ton petit nom (ex: Lune, Étoile, Rose...)",
+    newEntry: "➕",
+    exportData: "📤 Exporter",
+    importData: "📥 Importer",
+    entryTitle: "Un titre doux...",
+    entryContent: "Écris ce que tu ressens... sans filtre, sans peur.",
+    save: "Enregistrer dans ton cœur 💖",
+    moodLabel: "Choisis ton émotion du moment :",
+    noEntries: "Ton journal est vide... Écris ta première pensée 💌",
+    exportSuccess: "Ton journal a été exporté avec amour ! 💞",
+    importSuccess: "Ton journal secret est de retour ! 🌙",
+    invalidFile: "Ce fichier ne vient pas de ton cœur... ❌",
+    deleteConfirm: "Supprimer cette pensée pour toujours ? 😢",
+    joy: "😊",
+    sadness: "😢",
+    love: "💗",
+    peace: "🕊️",
+    fire: "🔥"
   },
   en: {
-    greeting: "Welcome, {name}",
-    newEntry: "+ New Entry",
-    exportData: "💾 Export",
-    importData: "📂 Import",
-    logout: "🚪 Logout",
-    login: "Login",
-    register: "Register",
-    entryTitle: "Entry Title",
-    entryContent: "Write your thoughts...",
-    save: "Save",
-    delete: "Delete",
-    mood: "Mood",
-    happy: "😊 Happy",
-    sad: "😢 Sad",
-    angry: "😠 Angry",
-    calm: "😌 Calm",
-    excited: "🤩 Excited",
-    noEntries: "No entries yet. Start writing!",
-    exportSuccess: "Data exported successfully!",
-    importSuccess: "Data imported successfully!",
-    invalidFile: "Invalid file.",
-    loginFailed: "Invalid credentials.",
-    registerSuccess: "Account created successfully!",
-    registerFailed: "Username already exists.",
-    deleteConfirm: "Are you sure you want to delete this entry?"
+    greeting: "Welcome, {name} 💖",
+    start: "Start ✨",
+    placeholderAlias: "Choose your sweet name (e.g. Moon, Star, Rose...)",
+    newEntry: "➕",
+    exportData: "📤 Export",
+    importData: "📥 Import",
+    entryTitle: "A soft title...",
+    entryContent: "Write what you feel... no filter, no fear.",
+    save: "Save in your heart 💖",
+    moodLabel: "Choose your current emotion:",
+    noEntries: "Your journal is empty... Write your first thought 💌",
+    exportSuccess: "Your journal has been exported with love! 💞",
+    importSuccess: "Your secret journal is back! 🌙",
+    invalidFile: "This file doesn't come from your heart... ❌",
+    deleteConfirm: "Delete this thought forever? 😢",
+    joy: "😊",
+    sadness: "😢",
+    love: "💗",
+    peace: "🕊️",
+    fire: "🔥"
   },
   es: {
-    greeting: "Bienvenido, {name}",
-    newEntry: "+ Nueva entrada",
-    exportData: "💾 Exportar",
-    importData: "📂 Importar",
-    logout: "🚪 Cerrar sesión",
-    login: "Iniciar sesión",
-    register: "Registrarse",
-    entryTitle: "Título de la entrada",
-    entryContent: "Escribe tus pensamientos...",
-    save: "Guardar",
-    delete: "Eliminar",
-    mood: "Estado de ánimo",
-    happy: "😊 Feliz",
-    sad: "😢 Triste",
-    angry: "😠 Enojado",
-    calm: "😌 Tranquilo",
-    excited: "🤩 Emocionado",
-    noEntries: "Aún no hay entradas. ¡Empieza a escribir!",
-    exportSuccess: "¡Datos exportados con éxito!",
-    importSuccess: "¡Datos importados con éxito!",
-    invalidFile: "Archivo inválido.",
-    loginFailed: "Credenciales inválidas.",
-    registerSuccess: "¡Cuenta creada con éxito!",
-    registerFailed: "El nombre de usuario ya existe.",
-    deleteConfirm: "¿Estás seguro de que quieres eliminar esta entrada?"
+    greeting: "Bienvenida, {name} 💖",
+    start: "Empezar ✨",
+    placeholderAlias: "Elige tu nombre dulce (ej: Luna, Estrella, Rosa...)",
+    newEntry: "➕",
+    exportData: "📤 Exportar",
+    importData: "📥 Importar",
+    entryTitle: "Un título suave...",
+    entryContent: "Escribe lo que sientes... sin filtros, sin miedo.",
+    save: "Guardar en tu corazón 💖",
+    moodLabel: "Elige tu emoción actual:",
+    noEntries: "Tu diario está vacío... ¡Escribe tu primer pensamiento! 💌",
+    exportSuccess: "¡Tu diario se exportó con amor! 💞",
+    importSuccess: "¡Tu diario secreto ha vuelto! 🌙",
+    invalidFile: "Este archivo no viene de tu corazón... ❌",
+    deleteConfirm: "¿Borrar este pensamiento para siempre? 😢",
+    joy: "😊",
+    sadness: "😢",
+    love: "💗",
+    peace: "🕊️",
+    fire: "🔥"
   }
 };
 
 let currentLang = localStorage.getItem('intima-lang') || 'fr';
-let currentUser = null;
+let userAlias = localStorage.getItem('intima-alias') || null;
 
-// Appliquer la langue
+// 🌸 Appliquer la langue
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('intima-lang', lang);
@@ -103,32 +88,44 @@ function t(key, replacements = {}) {
 }
 
 function updateUITexts() {
-  document.getElementById('greeting').innerText = currentUser ? t('greeting', { name: currentUser }) : t('greeting', { name: '' });
-  document.getElementById('new-entry-btn').innerText = t('newEntry');
-  document.getElementById('export-btn').innerText = t('exportData');
-  document.getElementById('import-btn').innerText = t('importData');
-  document.getElementById('logout-btn').innerText = t('logout');
-  document.getElementById('login-btn').innerText = t('login');
-  document.getElementById('register-btn').innerText = t('register');
+  if (userAlias) {
+    document.getElementById('greeting').innerText = t('greeting', { name: userAlias });
+  }
+  document.getElementById('start-btn').innerText = t('start');
+  document.getElementById('user-alias').placeholder = t('placeholderAlias');
   document.getElementById('entry-title').placeholder = t('entryTitle');
   document.getElementById('entry-content').placeholder = t('entryContent');
   document.getElementById('save-entry-btn').innerText = t('save');
-  document.getElementById('entry-mood').innerHTML = `
-    <option value="happy">${t('happy')}</option>
-    <option value="sad">${t('sad')}</option>
-    <option value="angry">${t('angry')}</option>
-    <option value="calm">${t('calm')}</option>
-    <option value="excited">${t('excited')}</option>
-  `;
+  document.querySelector('.mood-selector span').innerText = t('moodLabel');
 }
 
-// Chiffrement
-function encryptData(data, password) {
-  return CryptoJS.AES.encrypt(JSON.stringify(data), password).toString();
+// 🚀 Démarrage
+document.getElementById('start-btn').addEventListener('click', () => {
+  const aliasInput = document.getElementById('user-alias');
+  const alias = aliasInput.value.trim() || 'Belle Inconnue';
+
+  userAlias = alias;
+  localStorage.setItem('intima-alias', alias);
+
+  // Passer à l'écran du journal
+  document.getElementById('welcome-screen').classList.remove('active');
+  document.getElementById('journal-screen').classList.add('active');
+
+  loadEntries();
+  updateUITexts();
+});
+
+// 🔐 Chiffrement (basé sur l'alias — simple mais efficace pour usage perso)
+function getEncryptionKey() {
+  return CryptoJS.SHA256(userAlias).toString();
 }
 
-function decryptData(encrypted, password) {
-  const bytes = CryptoJS.AES.decrypt(encrypted, password);
+function encryptData(data) {
+  return CryptoJS.AES.encrypt(JSON.stringify(data), getEncryptionKey()).toString();
+}
+
+function decryptData(encrypted) {
+  const bytes = CryptoJS.AES.decrypt(encrypted, getEncryptionKey());
   try {
     return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
   } catch (e) {
@@ -136,67 +133,27 @@ function decryptData(encrypted, password) {
   }
 }
 
-// Stockage
-function saveUserData(username, passwordHash, entries) {
-  const data = { username, passwordHash, entries };
-  localStorage.setItem('intima-user', JSON.stringify(data));
+// 💾 Gestion des entrées
+function saveEntries(entries) {
+  localStorage.setItem('intima-entries', encryptData(entries));
 }
 
-function loadUserData() {
-  const data = localStorage.getItem('intima-user');
-  return data ? JSON.parse(data) : null;
+function loadEntries() {
+  const encrypted = localStorage.getItem('intima-entries');
+  if (!encrypted) {
+    showEntries([]);
+    return;
+  }
+  const entries = decryptData(encrypted) || [];
+  showEntries(entries);
 }
 
-// Auth
-document.getElementById('register-btn').addEventListener('click', () => {
-  const username = document.getElementById('username').value.trim();
-  const password = document.getElementById('password').value;
-  if (!username || !password) return alert("Veuillez remplir tous les champs");
-
-  const userData = loadUserData();
-  if (userData && userData.username === username) {
-    return alert(t('registerFailed'));
-  }
-
-  const passwordHash = CryptoJS.SHA256(password).toString();
-  saveUserData(username, passwordHash, []);
-  alert(t('registerSuccess'));
-});
-
-document.getElementById('login-btn').addEventListener('click', () => {
-  const username = document.getElementById('username').value.trim();
-  const password = document.getElementById('password').value;
-  const userData = loadUserData();
-
-  if (!userData || userData.username !== username) {
-    return alert(t('loginFailed'));
-  }
-
-  const passwordHash = CryptoJS.SHA256(password).toString();
-  if (passwordHash !== userData.passwordHash) {
-    return alert(t('loginFailed'));
-  }
-
-  currentUser = username;
-  showJournal(userData.entries);
-  document.getElementById('auth-screen').classList.remove('active');
-  document.getElementById('journal-screen').classList.add('active');
-  updateUITexts();
-});
-
-document.getElementById('logout-btn').addEventListener('click', () => {
-  currentUser = null;
-  document.getElementById('journal-screen').classList.remove('active');
-  document.getElementById('auth-screen').classList.add('active');
-});
-
-// Journal
-function showJournal(entries) {
+function showEntries(entries) {
   const container = document.getElementById('entries-container');
   container.innerHTML = '';
 
   if (entries.length === 0) {
-    container.innerHTML = `<p>${t('noEntries')}</p>`;
+    container.innerHTML = `<p style="text-align:center; color:var(--text); font-style:italic; padding: 3rem 1rem;">${t('noEntries')}</p>`;
     return;
   }
 
@@ -206,103 +163,91 @@ function showJournal(entries) {
     card.innerHTML = `
       <h3>${entry.title || 'Sans titre'}</h3>
       <div class="date">${new Date(entry.date).toLocaleDateString(currentLang)}</div>
-      <div class="mood">${getMoodEmoji(entry.mood)}</div>
-      <p>${entry.content.substring(0, 100)}${entry.content.length > 100 ? '...' : ''}</p>
-      <button class="delete-btn" data-index="${index}">${t('delete')}</button>
+      <div class="mood">${entry.mood}</div>
+      <p>${entry.content}</p>
     `;
     container.appendChild(card);
   });
-
-  document.querySelectorAll('.delete-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const index = e.target.dataset.index;
-      if (confirm(t('deleteConfirm'))) {
-        const userData = loadUserData();
-        userData.entries.splice(index, 1);
-        saveUserData(currentUser, userData.passwordHash, userData.entries);
-        showJournal(userData.entries);
-      }
-    });
-  });
 }
 
-function getMoodEmoji(mood) {
-  const emojis = {
-    happy: "😊",
-    sad: "😢",
-    angry: "😠",
-    calm: "😌",
-    excited: "🤩"
-  };
-  return emojis[mood] || "💭";
-}
-
-// Modal
+// ➕ Nouvelle entrée
 const modal = document.getElementById('entry-modal');
-const closeModal = document.querySelector('.close');
-closeModal.onclick = () => modal.style.display = "none";
-window.onclick = (event) => {
-  if (event.target == modal) modal.style.display = "none";
-};
-
 document.getElementById('new-entry-btn').addEventListener('click', () => {
   document.getElementById('entry-title').value = '';
   document.getElementById('entry-content').value = '';
-  document.getElementById('entry-mood').value = 'calm';
-  modal.style.display = "block";
+  modal.style.display = 'block';
 });
 
+document.querySelector('.modal-close').addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// 🎭 Sélection d'humeur
+document.querySelectorAll('.mood-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.mood-btn').forEach(b => b.style.transform = 'scale(1)');
+    btn.style.transform = 'scale(1.2)';
+    document.getElementById('selected-mood').value = btn.dataset.mood;
+  });
+});
+
+// 💾 Sauvegarde
 document.getElementById('save-entry-btn').addEventListener('click', () => {
   const title = document.getElementById('entry-title').value.trim();
   const content = document.getElementById('entry-content').value.trim();
-  const mood = document.getElementById('entry-mood').value;
+  const moodBtn = document.querySelector('.mood-btn[style*="scale(1.2)"]');
+  const mood = moodBtn ? moodBtn.dataset.mood : 'peace';
 
-  if (!content) return alert("Le contenu ne peut pas être vide");
+  if (!content) return;
 
-  const userData = loadUserData();
-  userData.entries.push({
+  const entries = decryptData(localStorage.getItem('intima-entries')) || [];
+  entries.push({
     title,
     content,
-    mood,
+    mood: translations[currentLang][mood],
     date: new Date().toISOString()
   });
 
-  saveUserData(currentUser, userData.passwordHash, userData.entries);
-  modal.style.display = "none";
-  showJournal(userData.entries);
+  saveEntries(entries);
+  modal.style.display = 'none';
+  showEntries(entries);
 });
 
-// Export / Import
+// 📤 Export
 document.getElementById('export-btn').addEventListener('click', () => {
-  const userData = loadUserData();
-  const encrypted = encryptData({ entries: userData.entries }, document.getElementById('password').value);
+  const encrypted = localStorage.getItem('intima-entries');
+  if (!encrypted) return;
+
   const blob = new Blob([encrypted], { type: 'text/plain' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `${currentUser}.intima`;
+  a.download = `intima-${userAlias}.secret`;
   a.click();
   URL.revokeObjectURL(url);
   alert(t('exportSuccess'));
 });
 
+// 📥 Import
 document.getElementById('import-btn').addEventListener('click', () => {
   const input = document.createElement('input');
   input.type = 'file';
-  input.accept = '.intima';
+  input.accept = '.secret';
   input.onchange = e => {
     const file = e.target.files[0];
     if (!file) return;
+
     const reader = new FileReader();
     reader.onload = event => {
       const encrypted = event.target.result;
-      const decrypted = decryptData(encrypted, document.getElementById('password').value);
-      if (!decrypted) return alert(t('invalidFile'));
+      const testDecrypt = decryptData(encrypted);
+      if (!testDecrypt) {
+        alert(t('invalidFile'));
+        return;
+      }
 
-      const userData = loadUserData();
-      userData.entries = decrypted.entries;
-      saveUserData(currentUser, userData.passwordHash, userData.entries);
-      showJournal(userData.entries);
+      localStorage.setItem('intima-entries', encrypted);
+      showEntries(testDecrypt);
       alert(t('importSuccess'));
     };
     reader.readAsText(file);
@@ -310,26 +255,29 @@ document.getElementById('import-btn').addEventListener('click', () => {
   input.click();
 });
 
-// Langue
+// 🌙 Changement de langue
 document.getElementById('lang-select').value = currentLang;
-document.getElementById('lang-select').addEventListener('change', (e) => {
+document.getElementById('lang-select').addEventListener('change', e => {
   setLanguage(e.target.value);
 });
 
-// Initialisation
+// 🎀 Initialisation
 document.addEventListener('DOMContentLoaded', () => {
   setLanguage(currentLang);
-  const saved = loadUserData();
-  if (saved) {
-    document.getElementById('username').value = saved.username;
+
+  // Si alias existe déjà → aller direct au journal
+  if (userAlias) {
+    document.getElementById('welcome-screen').classList.remove('active');
+    document.getElementById('journal-screen').classList.add('active');
+    loadEntries();
+    updateUITexts();
   }
 });
 
-// PWA : Enregistrement du Service Worker
+// 📱 PWA
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js')
-      .then(reg => console.log('Service Worker registered'))
-      .catch(err => console.log('Service Worker registration failed:', err));
+      .catch(console.error);
   });
 }

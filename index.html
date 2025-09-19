@@ -2,32 +2,28 @@
 <html lang="fr" id="html-root">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intima — Votre Journal Intime Personnel & Sécurisé</title>
-  <meta name="description" content="Intima est un journal intime élégant, sécurisé et installable. Écrivez librement, vos données restent chiffrées et sauvegardables même après désinstallation du navigateur.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Intima — Ton Journal Intime Personnel 🌸</title>
+  <meta name="description" content="Écris tes pensées, tes secrets, tes rêves. Intima est ton espace doux, sécurisé, rien qu'à toi.">
 
   <!-- SEO canonique -->
   <link rel="canonical" href="https://badley08.github.io/Intima/">
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Intima — Journal Intime Privé & Sécurisé">
-  <meta property="og:description" content="Un espace personnel pour écrire en toute sécurité. Vos pensées restent chiffrées et exportables. Aucune donnée n'est stockée en ligne.">
+  <meta property="og:title" content="Intima — Ton Journal Secret 🌙">
+  <meta property="og:description" content="Un espace doux, rien que pour toi. Écris en paix, sans jugement, sans trace.">
   <meta property="og:url" content="https://badley08.github.io/Intima/">
-  <meta property="og:image" content="https://badley08.github.io/intima/assets/social-preview.jpg">
-  <meta property="og:site_name" content="Intima Journal">
+  <meta property="og:image" content="https://badley08.io/Intima/assets/social-preview.jpg">
+  <meta property="og:site_name" content="Intima">
   <meta property="og:locale" content="fr_FR">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@VotreCompteTwitter">
-  <meta name="twitter:title" content="Intima — Votre Espace Intime Numérique">
-  <meta name="twitter:description" content="Écrivez en paix. Chiffrement local, export manuel, aucune trace dans le cloud.">
-  <meta name="twitter:image" content="https://badley08.io/intima/assets/social-preview.jpg">
-  <meta name="twitter:creator" content="@Karldgbrs6">
-
-  <!-- Pour Instagram & TikTok (ils lisent aussi OG) -->
-  <!-- Pas de métas spécifiques, mais OG suffit -->
+  <meta name="twitter:site" content="@intima_app">
+  <meta name="twitter:title" content="Intima — Ton Journal Intime 🌸">
+  <meta name="twitter:description" content="Ton refuge numérique. Chiffré, privé, exportable. Rien n’est stocké en ligne.">
+  <meta name="twitter:image" content="https://badley08.github.io/Intima/assets/social-preview.jpg">
 
   <!-- Favicon & PWA Icons -->
   <link rel="icon" type="image/png" href="assets/icons/icon-192x192.png">
@@ -37,84 +33,84 @@
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Thème couleur pour les navigateurs mobiles -->
-  <meta name="theme-color" content="#6a3093">
-  <meta name="msapplication-TileColor" content="#6a3093">
+  <!-- Thème mobile -->
+  <meta name="theme-color" content="#fec6d8">
+  <meta name="msapplication-TileColor" content="#fec6d8">
 
   <!-- Robots -->
   <meta name="robots" content="index, follow">
 
-  <!-- Préchargement des ressources critiques -->
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="preload" href="app.js" as="script">
-
-  <!-- Structured Data (Schema.org) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Intima — Journal Intime",
-    "description": "Application web progressive pour écrire un journal intime sécurisé, entièrement stocké localement avec chiffrement.",
+    "name": "Intima — Journal Intime Féminin",
+    "description": "Un journal intime numérique doux, sécurisé et personnel pour les filles. Stockage local chiffré, exportable, sans compte.",
     "url": "https://badley08.github.io/Intima/",
     "applicationCategory": "LifestyleApplication",
-    "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": "0"
-    },
-    "image": "https://badley08.github.io/intima/assets/social-preview.jpg"
+    "operatingSystem": "iOS, Android, Web",
+    "offers": { "@type": "Offer", "price": "0" },
+    "image": "https://badley08.github.io/Intima/assets/social-preview.jpg"
   }
   </script>
 </head>
 <body>
-  <div id="app">
-    <!-- Login / Register -->
-    <div id="auth-screen" class="screen active">
-      <h1>Intima</h1>
+  <!-- Écran d'accueil : choix du pseudo + langue -->
+  <div id="welcome-screen" class="screen active">
+    <div class="container">
+      <div class="logo">🌸 Intima</div>
+      <p class="subtitle">Ton espace secret, rien qu'à toi</p>
+
       <div class="form-group">
-        <input type="text" id="username" placeholder="Nom d'utilisateur" required>
-        <input type="password" id="password" placeholder="Mot de passe" required>
+        <input type="text" id="user-alias" placeholder="Choisis ton petit nom (ex: Lune, Étoile, Rose...)" maxlength="20">
       </div>
-      <button id="login-btn">Se connecter</button>
-      <button id="register-btn">Créer un compte</button>
+
       <div class="language-switcher">
+        <label>Langue / Language / Idioma</label>
         <select id="lang-select">
-          <option value="fr">Français</option>
-          <option value="en">English</option>
-          <option value="es">Español</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="es">🇪🇸 Español</option>
         </select>
       </div>
+
+      <button id="start-btn" class="btn-primary">Commencer ✨</button>
+    </div>
+  </div>
+
+  <!-- Écran du journal -->
+  <div id="journal-screen" class="screen">
+    <header>
+      <h1 id="greeting">Bienvenue, ma belle</h1>
+      <div class="toolbar">
+        <button id="new-entry-btn" class="btn-icon">➕</button>
+        <button id="export-btn" class="btn-icon">📤</button>
+        <button id="import-btn" class="btn-icon">📥</button>
+      </div>
+    </header>
+
+    <div id="entries-container" class="entries-grid">
+      <!-- Les entrées apparaîtront ici -->
     </div>
 
-    <!-- Main Journal -->
-    <div id="journal-screen" class="screen">
-      <header>
-        <h1 id="greeting">Bienvenue</h1>
-        <div class="toolbar">
-          <button id="new-entry-btn">+ Nouvelle entrée</button>
-          <button id="export-btn">💾 Exporter</button>
-          <button id="import-btn">📂 Importer</button>
-          <button id="logout-btn">🚪 Déconnexion</button>
+    <!-- Modal Nouvelle Entrée -->
+    <div id="entry-modal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <input type="text" id="entry-title" placeholder="Un titre doux...">
+        <textarea id="entry-content" placeholder="Écris ce que tu ressens... sans filtre, sans peur."></textarea>
+        <div class="mood-selector">
+          <span>Choisis ton émotion du moment :</span>
+          <div class="moods">
+            <button data-mood="joy" class="mood-btn">😊</button>
+            <button data-mood="sadness" class="mood-btn">😢</button>
+            <button data-mood="love" class="mood-btn">💗</button>
+            <button data-mood="peace" class="mood-btn">🕊️</button>
+            <button data-mood="fire" class="mood-btn">🔥</button>
+          </div>
         </div>
-      </header>
-
-      <div id="entries-container"></div>
-
-      <!-- Modal pour nouvelle entrée -->
-      <div id="entry-modal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <input type="text" id="entry-title" placeholder="Titre de l'entrée">
-          <textarea id="entry-content" placeholder="Écrivez votre pensée..."></textarea>
-          <select id="entry-mood">
-            <option value="happy">😊 Heureux</option>
-            <option value="sad">😢 Triste</option>
-            <option value="angry">😠 En colère</option>
-            <option value="calm">😌 Calme</option>
-            <option value="excited">🤩 Excité</option>
-          </select>
-          <button id="save-entry-btn">Sauvegarder</button>
-        </div>
+        <button id="save-entry-btn" class="btn-primary">Enregistrer dans ton cœur 💖</button>
       </div>
     </div>
   </div>

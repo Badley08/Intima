@@ -1,4 +1,4 @@
-const CACHE_NAME = 'intima-v1';
+const CACHE_NAME = 'intima-v1.1';
 const urlsToCache = [
   '/',
   '/index.html',
