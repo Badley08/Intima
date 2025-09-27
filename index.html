@@ -14,7 +14,7 @@
   <meta property="og:title" content="Intima — Ton Journal Secret 🌙">
   <meta property="og:description" content="Un espace doux, rien que pour toi. Écris en paix, sans jugement, sans trace.">
   <meta property="og:url" content="https://badley08.github.io/Intima/">
-  <meta property="og:image" content="https://badley08.io/Intima/assets/social-preview.jpg">
+  <meta property="og:image" content="https://badley08.github.io/Intima/assets/social-preview.jpg">
   <meta property="og:site_name" content="Intima">
   <meta property="og:locale" content="fr_FR">
 
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@intima_app">
   <meta name="twitter:title" content="Intima — Ton Journal Intime 🌸">
-  <meta name="twitter:description" content="Ton refuge numérique. Chiffré, privé, exportable. Rien n’est stocké en ligne.">
+  <meta name="twitter:description" content="Ton refuge numérique. Chiffré, privé, exportable. Rien n'est stocké en ligne.">
   <meta name="twitter:image" content="https://badley08.github.io/Intima/assets/social-preview.jpg">
 
   <!-- Favicon & PWA Icons -->
@@ -56,8 +56,21 @@
   </script>
 </head>
 <body>
+  <!-- Écran de mot de passe -->
+  <div id="password-screen" class="screen">
+    <div class="password-container">
+      <div class="lock-icon">🔒</div>
+      <h2 id="password-title">Crée ton mot de passe secret</h2>
+      <p id="password-subtitle">Il protégera ton journal intime 💖</p>
+      <input type="password" id="password-input" class="password-input" placeholder="••••••••">
+      <input type="password" id="password-confirm" class="password-input" placeholder="Confirme ton mot de passe" style="display:none;">
+      <button id="password-btn" class="btn-primary">Sécuriser mon journal 🔐</button>
+      <p id="password-error" style="color: #ff4444; margin-top: 1rem; display: none;"></p>
+    </div>
+  </div>
+
   <!-- Écran d'accueil : choix du pseudo + langue -->
-  <div id="welcome-screen" class="screen active">
+  <div id="welcome-screen" class="screen">
     <div class="container">
       <div class="logo">🌸 Intima</div>
       <p class="subtitle">Ton espace secret, rien qu'à toi</p>
@@ -84,22 +97,65 @@
     <header>
       <h1 id="greeting">Bienvenue, ma belle</h1>
       <div class="toolbar">
-        <button id="new-entry-btn" class="btn-icon">➕</button>
-        <button id="export-btn" class="btn-icon">📤</button>
-        <button id="import-btn" class="btn-icon">📥</button>
+        <button id="theme-btn" class="btn-icon" title="Changer de thème">🎨</button>
+        <button id="stats-btn" class="btn-icon" title="Statistiques">📊</button>
+        <button id="new-entry-btn" class="btn-icon" title="Nouvelle entrée">➕</button>
+        <button id="export-btn" class="btn-icon" title="Exporter">📤</button>
+        <button id="import-btn" class="btn-icon" title="Importer">📥</button>
+        <button id="settings-btn" class="btn-icon" title="Paramètres">⚙️</button>
       </div>
     </header>
+
+    <!-- Barre de recherche et filtres -->
+    <div class="search-filter-bar">
+      <input type="text" id="search-box" class="search-box" placeholder="🔍 Rechercher dans ton journal...">
+      <button id="clear-filters-btn" class="btn-icon" title="Effacer les filtres">🔄</button>
+    </div>
+
+    <div class="filter-tags" id="filter-tags">
+      <!-- Les tags de filtrage apparaîtront ici dynamiquement -->
+    </div>
+
+    <!-- Panel de statistiques -->
+    <div id="stats-panel" class="stats-panel">
+      <div class="stat-item">
+        <div class="stat-value" id="stat-total">0</div>
+        <div class="stat-label">Entrées totales</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="stat-month">0</div>
+        <div class="stat-label">Ce mois-ci</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="stat-mood">😊</div>
+        <div class="stat-label">Humeur dominante</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="stat-streak">0</div>
+        <div class="stat-label">Jours consécutifs</div>
+      </div>
+    </div>
 
     <div id="entries-container" class="entries-grid">
       <!-- Les entrées apparaîtront ici -->
     </div>
 
-    <!-- Modal Nouvelle Entrée -->
+    <!-- Modal Nouvelle Entrée / Modification -->
     <div id="entry-modal" class="modal">
       <div class="modal-content">
         <button class="modal-close">&times;</button>
+        <h2 id="modal-title">Nouvelle pensée 💭</h2>
+        
         <input type="text" id="entry-title" placeholder="Un titre doux...">
         <textarea id="entry-content" placeholder="Écris ce que tu ressens... sans filtre, sans peur."></textarea>
+        
+        <!-- Tags personnalisés -->
+        <div class="tags-input-container">
+          <label>🏷️ Tags (sépare-les par des virgules)</label>
+          <input type="text" id="entry-tags" placeholder="joie, amour, rêve, projet...">
+        </div>
+
+        <!-- Sélecteur d'humeur -->
         <div class="mood-selector">
           <span>Choisis ton émotion du moment :</span>
           <div class="moods">
@@ -108,11 +164,145 @@
             <button data-mood="love" class="mood-btn">💗</button>
             <button data-mood="peace" class="mood-btn">🕊️</button>
             <button data-mood="fire" class="mood-btn">🔥</button>
+            <button data-mood="star" class="mood-btn">⭐</button>
+            <button data-mood="moon" class="mood-btn">🌙</button>
+            <button data-mood="flower" class="mood-btn">🌸</button>
           </div>
         </div>
+
+        <!-- Upload d'image -->
+        <div class="image-upload-section">
+          <label for="entry-image" class="image-upload-label">
+            📷 Ajouter une photo souvenir (optionnel)
+          </label>
+          <input type="file" id="entry-image" accept="image/*" style="display: none;">
+          <div id="image-preview" class="image-preview"></div>
+        </div>
+
         <button id="save-entry-btn" class="btn-primary">Enregistrer dans ton cœur 💖</button>
       </div>
     </div>
+
+    <!-- Modal Lecture d'entrée -->
+    <div id="read-modal" class="modal">
+      <div class="modal-content read-modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="entry-actions">
+          <button id="pin-entry-btn" class="action-btn" title="Épingler">📌</button>
+          <button id="edit-entry-btn" class="action-btn" title="Modifier">✏️</button>
+          <button id="delete-entry-btn" class="action-btn delete-btn" title="Supprimer">🗑️</button>
+        </div>
+        
+        <h2 id="read-title">Titre</h2>
+        <div id="read-date" class="read-date"></div>
+        <div id="read-mood" class="read-mood"></div>
+        <div id="read-tags" class="read-tags"></div>
+        <div id="read-image" class="read-image"></div>
+        <div id="read-content" class="read-content"></div>
+      </div>
+    </div>
+
+    <!-- Modal Thèmes -->
+    <div id="theme-modal" class="modal">
+      <div class="modal-content small-modal">
+        <button class="modal-close">&times;</button>
+        <h2>Choisis ton ambiance 🎨</h2>
+        <div class="theme-selector">
+          <button class="theme-option" data-theme="default">
+            <div class="theme-preview" style="background: linear-gradient(135deg, #fec6d8, #f8a5c2)"></div>
+            <span>Rose Doux</span>
+          </button>
+          <button class="theme-option" data-theme="dark">
+            <div class="theme-preview" style="background: linear-gradient(135deg, #2a1328, #4a1942)"></div>
+            <span>Nuit Étoilée</span>
+          </button>
+          <button class="theme-option" data-theme="ocean">
+            <div class="theme-preview" style="background: linear-gradient(135deg, #a8e6cf, #7fcbb3)"></div>
+            <span>Océan Calme</span>
+          </button>
+          <button class="theme-option" data-theme="sunset">
+            <div class="theme-preview" style="background: linear-gradient(135deg, #ffd1a9, #ffb088)"></div>
+            <span>Coucher de Soleil</span>
+          </button>
+          <button class="theme-option" data-theme="lavender">
+            <div class="theme-preview" style="background: linear-gradient(135deg, #e0c3fc, #c39bff)"></div>
+            <span>Lavande Rêveuse</span>
+          </button>
+          <button class="theme-option" data-theme="cherry">
+            <div class="theme-preview" style="background: linear-gradient(135deg, #ffadad, #ffd6a5)"></div>
+            <span>Cerise Sucrée</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Paramètres -->
+    <div id="settings-modal" class="modal">
+      <div class="modal-content small-modal">
+        <button class="modal-close">&times;</button>
+        <h2>Paramètres ⚙️</h2>
+        <div class="settings-list">
+          <button id="change-password-btn" class="settings-btn">🔐 Changer le mot de passe</button>
+          <button id="change-alias-btn" class="settings-btn">✨ Changer de petit nom</button>
+          <button id="lock-journal-btn" class="settings-btn">🔒 Verrouiller le journal</button>
+          <div class="settings-divider"></div>
+          <button id="offline-status-btn" class="settings-btn info-btn">
+            <span id="offline-indicator">📶</span> Mode hors ligne : <span id="offline-status">Actif</span>
+          </button>
+          <button id="clear-cache-btn" class="settings-btn">🗑️ Vider le cache</button>
+          <div class="settings-divider"></div>
+          <a href="https://badley08.github.io/Karlito" target="_blank" class="settings-btn link-btn">
+            👨‍💻 Mon Portfolio
+          </a>
+          <a href="https://ko-fi.com/karlito08" target="_blank" class="settings-btn link-btn">
+            ☕ Me soutenir sur Ko-fi
+          </a>
+          <div class="settings-divider"></div>
+          <button id="about-btn" class="settings-btn">ℹ️ À propos</button>
+          <button id="delete-all-btn" class="settings-btn danger-btn">⚠️ Tout supprimer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal À propos -->
+    <div id="about-modal" class="modal">
+      <div class="modal-content small-modal">
+        <button class="modal-close">&times;</button>
+        <h2>À propos d'Intima 🌸</h2>
+        <div class="about-content">
+          <p><strong>Version:</strong> 2.0 Enhanced</p>
+          <p><strong>Créé par:</strong> <a href="https://badley08.github.io/Karlito" target="_blank">Karlito08</a></p>
+          <p style="margin-top: 1rem;">Intima est un journal intime 100% privé et sécurisé. Toutes tes données sont chiffrées et stockées uniquement sur ton appareil.</p>
+          <p style="margin-top: 1rem;">✨ <strong>Fonctionnalités:</strong></p>
+          <ul style="text-align: left; margin-left: 1.5rem; margin-top: 0.5rem;">
+            <li>Chiffrement AES-256</li>
+            <li>Mode hors ligne complet</li>
+            <li>Import/Export sécurisé</li>
+            <li>6 thèmes magnifiques</li>
+            <li>Statistiques & Streak</li>
+            <li>Tags & Recherche</li>
+            <li>Support multimédia</li>
+          </ul>
+          <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;">
+            Aucune donnée n'est envoyée sur internet. Ton journal reste privé, pour toujours. 💖
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indicateur de connexion -->
+    <div id="connection-indicator" class="connection-indicator">
+      <span id="connection-icon">📶</span>
+      <span id="connection-text">En ligne</span>
+    </div>
+  </div>
+
+  <!-- Easter Egg Zone (clique 5 fois dans le coin) -->
+  <div id="easter-egg-trigger" style="position: fixed; bottom: 10px; right: 10px; width: 30px; height: 30px; opacity: 0; cursor: pointer;"></div>
+  <div id="easter-egg-message" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); z-index: 1000; text-align: center;">
+    <h3>✨ Tu as trouvé le secret ! ✨</h3>
+    <p>Continue d'écrire, tu es incroyable ! 💖</p>
+    <button onclick="document.getElementById('easter-egg-message').style.display='none'" class="btn-primary" style="margin-top: 1rem;">Merci ! 🥰</button>
   </div>
 
   <!-- Scripts -->
